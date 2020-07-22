@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "allowJs": true,
+    "target": "es5",
+    "lib": ["ES2015.Promise", "ES5", "DOM", "ES2018.Promise"],
+    "removeComments": true,
+    "declaration": true
+  },
+  "include": ["./src/**/*"]
+}

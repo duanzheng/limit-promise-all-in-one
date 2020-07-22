@@ -1,0 +1,22 @@
+{
+  "name": "limit-promise-all-in-one",
+  "version": "1.0.0",
+  "description": "Contains some commonly used methods to limit Promise concurrency",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "publish": "npm publish ."
+  },
+  "author": "Tony段 <duanzheng21518@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "promise",
+    "limit"
+  ],
+  "types": "lib/index.d.ts",
+  "homepage": "https://github.com/duanzheng/limit-promise-all-in-one",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duanzheng/limit-promise-all-in-one"
+  }
+}
