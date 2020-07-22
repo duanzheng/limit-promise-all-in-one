@@ -1,6 +1,6 @@
 {
   "name": "limit-promise-all-in-one",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Contains some commonly used methods to limit Promise concurrency",
   "main": "lib/index.js",
   "scripts": {

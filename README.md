@@ -4,6 +4,12 @@ Contains some commonly used methods to limit Promise concurrency.
 
 包含了一些常用的限制 Promise 并发量的方法。
 
+## Install
+
+```shell
+npm install limit-promise-all-in-one
+```
+
 ## Usage
 
 Suppose we have such a Promise, which will be called frequently, and we want to limit its concurrent number:
