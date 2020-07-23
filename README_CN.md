@@ -1,12 +1,10 @@
 # limit-promise-all-in-one
 
-Contains some commonly used functions that limit the concurrency of Promises.
+包含了一些常用的限制 Promise 并发量的函数。
 
-[中文文档](https://github.com/duanzheng/limit-promise-all-in-one/blob/master/README_CN.md)
+## Why？
 
-## Why?
-
-Some asynchronous requests may cause some problems if the concurrency is too large. For example, too frequent network requests may exceed the server's access limit. One solution is to limit the maximum number of pending Promises, and redundant pending requests need to be queued for execution. Based on this idea, this library provides some functions to handle such situations.
+有些异步请求如果并发量太大可能会导致一些问题，比如过于频繁的网络请求可能会超过服务器的访问限制。其中一种解决方法是限制 pending 状态的 Promise 的最大数量，多余的待处理请求需要排队等待执行。这个库基于这个思路提供了一些函数用于处理此类情况。
 
 ## Install
 
@@ -16,7 +14,7 @@ npm install limit-promise-all-in-one
 
 ## Usage
 
-First define a function that returns Promise, which will be used in the following examples:
+首先定义一个返回 Promise 的函数，在后面的示例中都会用到：
 
 ```javascript
 const timeout = (time) =>
@@ -29,7 +27,7 @@ const timeout = (time) =>
 
 **LimitPromisePool**
 
-A concurrent task pool instance used to create a Promise. The instance will provide some functions to limit the number of concurrent Promises passed into it. Its configuration items are as follows:
+用于创建一个 Promise 的并发任务池实例，该实例会提供一些函数对传入其中的 Promise 并发数量进行限制。它的配置项如下：
 
 | Configuration | Type   | Remark                                      |
 | ------------- | ------ | ------------------------------------------- |
@@ -37,7 +35,7 @@ A concurrent task pool instance used to create a Promise. The instance will prov
 
 **LimitPromisePool.call**
 
-Execute a function that returns a Promise immediately.
+立即执行一个返回值为 Promise 的函数。
 
 ```javascript
 import { LimitPromisePool } from 'limit-promise-all-in-one';
@@ -54,7 +52,7 @@ limitPromise.call(() => timeout(600)).then((r) => console.log(r));
 
 **LimitPromisePool.bind**
 
-Transform a function that returns a Promise so that the execution of this function is limited by the amount of concurrency.
+改造一个返回值为 Promise 的函数，使得这个函数的执行受到并发量限制。
 
 ```javascript
 import { LimitPromisePool } from 'limit-promise-all-in-one';
@@ -73,7 +71,7 @@ limitTimeout(600).then((r) => console.log(r));
 
 **LimitPromiseAll**
 
-The usage of this function is similar to `Promise.all`, except that the Promise function in each array element needs to be wrapped in a function and used as its return value.
+ 这个函数的用法和 `Promise.all` 类似，区别在于每个数组元素中的 Promise 函数需要用一个函数包裹起来，并作为它的返回值。
 
 ```javascript
 import { LimitPromiseAll } from 'limit-promise-all-in-one';
